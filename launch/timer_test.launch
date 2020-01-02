@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 <launch>
+  <arg name="period" default="0.002" doc="update period in seconds" />
 
   <group ns="cpp">
     <node name="timer_test_cpp" pkg="timer_test" type="timer_test_cpp"
-      output="screen" >
+      output="screen"
+      launch-prefix="taskset 2" >
+      <param name="period" value="$(arg period)" />
     </node>
 
     <node name="average_dt" pkg="topic_state" type="average.py"
@@ -14,7 +17,10 @@
 
   <group ns="python">
     <node name="timer_test_py" pkg="timer_test" type="timer_test.py"
-      output="screen" >
+      output="screen"
+      launch-prefix="taskset 2" >
+      <param name="period" value="$(arg period)" />
+      <param name="cycles" value="1" />
     </node>
 
     <node name="average_dt" pkg="topic_state" type="average.py"
