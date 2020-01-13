@@ -5,7 +5,7 @@
   <group ns="cpp">
     <node name="timer_test_cpp" pkg="timer_test" type="timer_test_cpp"
       output="screen"
-      launch-prefix="taskset 2" >
+      launch-prefix="taskset -c 2" >
       <param name="period" value="$(arg period)" />
     </node>
 
@@ -18,7 +18,7 @@
   <group ns="python">
     <node name="timer_test_py" pkg="timer_test" type="timer_test.py"
       output="screen"
-      launch-prefix="taskset 2" >
+      launch-prefix="taskset -c 3" >
       <param name="period" value="$(arg period)" />
       <param name="cycles" value="1" />
     </node>
