@@ -5,6 +5,7 @@ import rospy
 
 from std_msgs.msg import Float32
 
+
 class TimerTest:
     def __init__(self):
         self.update_time_pub = rospy.Publisher("update_time", Float32, queue_size=10)
