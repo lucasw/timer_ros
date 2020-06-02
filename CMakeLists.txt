@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(timer_test)
+cmake_minimum_required(VERSION 3.0)
+project(timer_test VERSION 0.0.1)
 
 find_package(catkin REQUIRED COMPONENTS
   dynamic_reconfigure
@@ -12,6 +12,11 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+set(
+  ROSLINT_CPP_OPTS
+  "--extensions=cpp,h,hpp" "--filter=-whitespace/braces"
+)
+roslint_cpp()
 roslint_python()
 
 catkin_package(

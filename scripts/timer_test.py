@@ -28,6 +28,7 @@ class TimerTest:
             self.update_dt_pub.publish(msg)
         self.last_real = te.current_real
 
+
 if __name__ == '__main__':
     rospy.init_node("timer_test_py")
     timer_test = TimerTest()

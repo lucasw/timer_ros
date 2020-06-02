@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="period" default="0.002" doc="update period in seconds" />
+  <arg name="period" default="0.01" doc="update period in seconds" />
 
   <group ns="cpp">
     <node name="timer_test_cpp" pkg="timer_test" type="timer_test_cpp"
@@ -9,7 +9,7 @@
       <param name="period" value="$(arg period)" />
     </node>
 
-    <node name="average_dt" pkg="topic_state" type="average.py"
+    <node name="average_dt" pkg="topic_state" type="float_stats"
       output="screen" >
       <remap from="topic" to="update_dt" />
     </node>
@@ -23,7 +23,7 @@
       <param name="cycles" value="1" />
     </node>
 
-    <node name="average_dt" pkg="topic_state" type="average.py"
+    <node name="average_dt" pkg="topic_state" type="float_stats"
       output="screen" >
       <remap from="topic" to="update_dt" />
     </node>
