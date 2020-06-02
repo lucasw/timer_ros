@@ -5,7 +5,7 @@ find_package(catkin REQUIRED COMPONENTS
   dynamic_reconfigure
   ddynamic_reconfigure
   message_generation
-  nodelet
+  # nodelet
   roscpp
   rospy
   roslint
