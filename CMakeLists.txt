@@ -32,6 +32,10 @@ target_link_libraries(timer_test_cpp
   ${catkin_LIBRARIES}
 )
 
+add_executable(bad_time src/bad_time.cpp)
+target_link_libraries(bad_time
+  ${catkin_LIBRARIES}
+)
 install(PROGRAMS
   scripts/timer_test.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
